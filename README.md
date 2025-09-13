@@ -1,6 +1,6 @@
 <div align="center">
   
-# MediScan: AI-Powered Bone Fracture Detection
+# AI-Powered Bone Fracture Detection
 </div>
 <div align="center">
   
