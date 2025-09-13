@@ -49,7 +49,7 @@ This is a state-of-the-art web application that uses artificial intelligence to 
 ---
 ## 🏗️ Architecture
 
-MediScan consists of two main components:
+It consists of two main components:
 
 1.  **Backend (FastAPI)**: Handles image processing, runs the YOLOv8 model, and generates visualizations.
 2.  **Frontend (HTML/CSS/JS)**: Provides user interface for uploading X-rays and viewing results.
@@ -101,59 +101,3 @@ MediScan consists of two main components:
 - Python 3.8+
 - pip (Python package manager)
 - Modern web browser
-
-### Installation
-
-1.  **Clone the repository**
-    ```bash
-    git clone [https://github.com/yourusername/mediscan.git](https://github.com/yourusername/mediscan.git)
-    cd mediscan
-    ```
-
-2.  **Install dependencies**
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-3.  **Start the backend server**
-    ```bash
-    cd backend
-    uvicorn app:app --reload
-    ```
-
-4.  **Open the frontend**
-    - Navigate to the `frontend` folder
-    - Open `index.html` in your web browser
-
-    OR
-
-    - Serve the frontend using a simple HTTP server:
-      ```bash
-      cd frontend
-      python -m http.server 8080
-      ```
-    - Open `http://localhost:8080` in your browser
-
----
-## 📡 API Endpoints
-
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/` | GET | API status check |
-| `/status` | GET | Get backend system status |
-| `/detect` | POST | Upload and analyze X-ray image |
-| `/gradcam/{image_id}` | GET | Get Grad-CAM visualization for a specific image |
-
-### Example API Usage
-
-```python
-import requests
-
-# Upload an X-ray image for detection
-with open('xray.jpg', 'rb') as f:
-    files = {'file': f}
-    response = requests.post('http://localhost:8000/detect', files=files)
-
-result = response.json()
-print(f"Detection ID: {result['detection_id']}")
-print(f"Result image: {result['result_image']}")
